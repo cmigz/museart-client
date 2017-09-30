@@ -21,11 +21,11 @@
       <div class="" id="navbarNav">
         <ul class="navbar-nav">
 
+          <!-- User Sign Up -->
           <li class="nav-item dropdown">
             <button class=" btn btn-primary nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Sign Up
             </button>
-            <!-- Sign Up Form -->
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <form id="sign-up">
                 <fieldset>
@@ -38,21 +38,31 @@
             </div>
           </li>
 
+          <!-- User Sign In -->
           <li class="nav-item dropdown">
             <button class=" btn btn-primary nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Sign In
             </button>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <form class="user-signup">
-                <h4>Sign In</h4>
-                <div id="sign-in-alert"></div>
-                <input name="credentials[email]" type="text" value="" placeholder="Email">
-                <input name="credentials[password]" type="password" value="" placeholder="Password">
-                <input name="credentials[password_confirmation]" type="password" value="" placeholder="Re-enter Password">
-                <button class="btn-success" type="submit" name="submit" value="Sign Up!" id="create-button">Create Account</button>
+              <form id="sign-in">
+                <fieldset>
+                  <input type="text" name="credentials[email]" value="" placeholder="Email">
+                  <input type="password" name="credentials[password]" value="" placeholder="Password">
+                  <input class="btn btn-success" type="submit" name="submit" value="Sign In!!">
+                </fieldset>
               </form>
             </div>
           </li>
+
+          <!-- User Sign Out -->
+          <li class="nav-item dropdown">
+            <form id="sign-out" class="">
+              <fieldset>
+                <input class="btn btn-primary" type="submit" name="submit" value="Sign out!">
+              </fieldset>
+            </form>
+          </li>
+
         </ul>
       </div>
     </nav>

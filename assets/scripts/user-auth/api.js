@@ -11,6 +11,29 @@ const signUp = function (data) {
   })
 }
 
+// Post => Sign In
+const signIn = function (data) {
+  console.log(data)
+  return $.ajax({
+    url: app.host + 'sign-in/',
+    method: 'POST',
+    data
+  })
+}
+
+// Delete => Sign Out
+const signOut = function () {
+  return $.ajax({
+    method: 'DELETE',
+    url: app.host + 'sign-out/' + app.user.id,
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
 module.exports = {
-  signUp
+  signUp,
+  signIn,
+  signOut
 }
