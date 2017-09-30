@@ -1,0 +1,42 @@
+@import './fonts';
+@import './colors';
+
+// Element Selectors ====================
+body {
+  margin: 0;
+  padding: 0;
+}
+
+// NavBar ===============================
+.navbar {
+  background-color: $white;
+  border: 1px solid $black;
+
+  > div  > ul {
+    margin-top: auto;
+    padding-left: 0;
+  }
+
+  > div > ul > li {
+    list-style-type: none;
+    margin: 6px;
+  }
+}
+
+.navbar-nav {
+  margin-top: auto;
+  padding: none;
+}
+
+// Header ==================================
+.header-container {
+  border: 1px solid $black;
+  height: 200px;
+  margin: 0 auto;
+  width: 95%;
+}
+
+.site-name {
+  font-family: $header-font;
+  text-align: center;
+}
