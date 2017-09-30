@@ -32,8 +32,21 @@ const signOut = function () {
   })
 }
 
+// Patch => Change Password
+const changePassword = function (data) {
+  return $.ajax({
+    method: 'PATCH',
+    url: app.host + 'change-password/' + app.user.id,
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
-  signOut
+  signOut,
+  changePassword
 }

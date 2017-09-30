@@ -33,11 +33,22 @@ const onSignOutFailure = () => {
   console.log('Sign Out Failed')
 }
 
+// Change Password
+const onChangePasswordSuccess = () => {
+  console.log('Password Change Successful')
+}
+
+const onChangePasswordFailure = () => {
+  console.log('Password Change Failed')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
   onSignInSuccess,
   onSignInFailure,
   onSignOutSuccess,
-  onSignOutFailure
+  onSignOutFailure,
+  onChangePasswordSuccess,
+  onChangePasswordFailure
 }

@@ -63,6 +63,22 @@
             </form>
           </li>
 
+          <!-- User Change Password -->
+          <li class="nav-item dropdown">
+            <button class=" btn btn-primary nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Change Password
+            </button>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <form id="change-password">
+                <fieldset>
+                  <input type="password" name="passwords[old]" value="" placeholder="Original Password">
+                  <input type="password" name="passwords[new]" value="" placeholder="New Password">
+                  <input class="btn btn-success" type="submit" name="submit" value="Change Password">
+                </fieldset>
+              </form>
+            </div>
+          </li>
+
         </ul>
       </div>
     </nav>
