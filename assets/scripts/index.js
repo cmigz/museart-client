@@ -3,9 +3,11 @@
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const userEvents = require('./user-auth/events')
+const drawingEvents = require('./drawings/events')
 
 $(() => {
   setAPIOrigin(location, config)
+  drawingEvents.onGetDrawings()
 
   // User Auth Actions
   $('#sign-up').on('submit', userEvents.onSignUp)

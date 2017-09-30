@@ -40,3 +40,23 @@ body {
   font-family: $header-font;
   text-align: center;
 }
+
+// Drawing Container
+.drawing-container {
+  border: 1px solid $black;
+  margin: auto;
+  margin-top: 10px;
+  width: 90%;
+}
+
+.drawing-image {
+  border: 1px solid $black;
+  margin: 10px auto;
+  display: block;
+  width: 600px;
+  height: 300px;
+}
+
+.drawing-lyrics {
+  text-align: center;
+}
