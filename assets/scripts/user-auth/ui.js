@@ -34,6 +34,7 @@ const onSignOutSuccess = () => {
   $('#nav-sign-up, #nav-sign-in').show()
   $('#home-feed').show()
   $('#create-drawing').hide()
+  $('#user-drawings').children().remove()
 }
 
 const onSignOutFailure = () => {

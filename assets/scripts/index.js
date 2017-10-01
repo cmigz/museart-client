@@ -25,6 +25,15 @@ $(() => {
     drawingEvents.onDeleteDrawing(event.target.id)
   })
 
+  $(document).on('submit', '#update-drawing', function (event) {
+    event.preventDefault()
+    console.log('Index This')
+    console.log(this)
+    console.log('Index Event Target')
+    console.log(event)
+    drawingEvents.onUpdateDrawing(event)
+  })
+
   $('#nav-home').on('click', function () {
     $('#user-drawings, #create-drawing').hide()
     $('#home-feed').show()

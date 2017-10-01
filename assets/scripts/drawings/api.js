@@ -53,9 +53,31 @@ const deleteDrawing = function (data) {
   })
 }
 
+const updateDrawing = function (data) {
+  console.log('API Data')
+  console.log(data)
+  return $.ajax({
+    url: app.host + 'drawings/' + app.user.id + '/' + data.credentials._id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      'drawing': {
+        'imageLink': data.credentials.imageLink,
+        'songTitle': data.credentials.songTitle,
+        'songArtist': data.credentials.songArtist,
+        'songLink': data.credentials.songLink,
+        'lyrics': data.credentials.lyrics
+      }
+    }
+  })
+}
+
 module.exports = {
   getDrawings,
   getUserDrawings,
   createDrawing,
-  deleteDrawing
+  deleteDrawing,
+  updateDrawing
 }

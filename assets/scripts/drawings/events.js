@@ -45,9 +45,21 @@ const onDeleteDrawing = function (event) {
     .catch(ui.onDeleteDrawingFailure)
 }
 
+const onUpdateDrawing = function (event) {
+  const data = getFormFields(event.currentTarget)
+  console.log('Events.js Data')
+  console.log(data)
+  console.log('Events This')
+  console.log(this)
+  api.updateDrawing(data)
+    .then(ui.onUpdateDrawingSuccess)
+    .catch(ui.onUpdateDrawingFailure)
+}
+
 module.exports = {
   onGetDrawings,
   onGetUserDrawings,
   onAddDrawing,
-  onDeleteDrawing
+  onDeleteDrawing,
+  onUpdateDrawing
 }

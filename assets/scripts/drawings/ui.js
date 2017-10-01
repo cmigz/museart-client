@@ -54,10 +54,23 @@ const loopUserDrawings = (data) => {
           '<div class="row">' +
             '<p class="drawing-lyrics">' + data.drawings[i].lyrics + '</p>' +
           '</div>' +
+
+          '<form id="update-drawing">' +
+            '<fieldset>' +
+              '<input class="hidden" type="text" name="credentials[_id]" value="' + data.drawings[i]._id + '">' +
+              'Image Link ' + '<input type="text" class="update-form" name="credentials[imageLink]" value="' + data.drawings[i].imageLink + '">' + '<br>' +
+              'Song Title ' + '<input type="text" class="update-form" name="credentials[songTitle]" value="' + data.drawings[i].songTitle + '">' + '<br>' +
+              'Song Artist ' + '<input type="text" class="update-form" name="credentials[songArtist]" value="' + data.drawings[i].songArtist + '">' + '<br>' +
+              'Lyrics ' + '<input type="text" class="update-form" name="credentials[lyrics]" value="' + data.drawings[i].lyrics + '">' + '<br>' +
+              'Link to Song ' + '<input type="text" class="update-form" name="credentials[songLink]" value="' + data.drawings[i].songLink + '">' + '<br>' +
+
+              '<input id="' + data.drawings[i]._id + '"class="btn btn-success" type="submit" name="submit" value="Update Drawing">' +
+            '</fieldset>' +
+          '</form>' +
           '<form id="delete-drawing">' +
             '<fieldset>' +
-              '<input class="hidden" type="text" name="credentials[_id]" value="' + data.drawings[i]._id + '" placeholder="Link to Image">' +
-              '<input id="' + data.drawings[i]._id + '"class="btn btn-success" type="submit" name="submit" value="Delete Drawing">' +
+              '<input class="hidden" type="text" name="credentials[_id]" value="' + data.drawings[i]._id + '">' +
+              '<input id="' + data.drawings[i]._id + '"class="btn btn-danger delete-button" type="submit" name="submit" value="Delete Drawing">' +
             '</fieldset>' +
           '</form>' +
         '</div>' +
@@ -104,6 +117,14 @@ const onDeleteDrawingFailure = () => {
   console.log('Delete Failed')
 }
 
+const onUpdateDrawingSuccess = () => {
+  console.log('Update Successful')
+}
+
+const onUpdateDrawingFailure = () => {
+  console.log('Update Failed')
+}
+
 module.exports = {
   onGetDrawingsSuccess,
   onGetDrawingsFailure,
@@ -112,5 +133,7 @@ module.exports = {
   onAddDrawingSuccess,
   onAddDrawingFailure,
   onDeleteDrawingSuccess,
-  onDeleteDrawingFailure
+  onDeleteDrawingFailure,
+  onUpdateDrawingSuccess,
+  onUpdateDrawingFailure
 }
