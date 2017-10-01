@@ -1,6 +1,4 @@
 'use strict'
-const app = require('../app.js')
-const events = require('./events.js')
 
 // Getting all drawings
 const loopAllDrawings = (data) => {
@@ -31,8 +29,6 @@ const loopAllDrawings = (data) => {
 }
 
 const loopUserDrawings = (data) => {
-  console.log('UI.js User Drawings Data')
-  console.log(data)
   $('#user-drawings').children().remove()
   for (let i = 0; i < data.drawings.length; i++) {
     $('#user-drawings').append(
@@ -54,7 +50,7 @@ const loopUserDrawings = (data) => {
           '<div class="row">' +
             '<p class="drawing-lyrics">' + data.drawings[i].lyrics + '</p>' +
           '</div>' +
-
+          // Update Drawing Form
           '<form id="update-drawing">' +
             '<fieldset>' +
               '<input class="hidden" type="text" name="credentials[_id]" value="' + data.drawings[i]._id + '">' +
@@ -63,9 +59,9 @@ const loopUserDrawings = (data) => {
               'Song Artist ' + '<input type="text" class="update-form" name="credentials[songArtist]" value="' + data.drawings[i].songArtist + '">' + '<br>' +
               'Lyrics ' + '<input type="text" class="update-form" name="credentials[lyrics]" value="' + data.drawings[i].lyrics + '">' + '<br>' +
               'Link to Song ' + '<input type="text" class="update-form" name="credentials[songLink]" value="' + data.drawings[i].songLink + '">' + '<br>' +
-
               '<input id="' + data.drawings[i]._id + '"class="btn btn-success" type="submit" name="submit" value="Update Drawing">' +
             '</fieldset>' +
+          // Delete Drawing Form
           '</form>' +
           '<form id="delete-drawing">' +
             '<fieldset>' +

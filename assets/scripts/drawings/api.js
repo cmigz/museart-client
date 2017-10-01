@@ -5,9 +5,6 @@ const getDrawings = function (data) {
   return $.ajax({
     url: app.host + 'drawings/',
     method: 'GET'
-    // headers: {
-    //   Authorization: 'Token token=' + app.user.token
-    // }
   })
 }
 
@@ -19,9 +16,6 @@ const getUserDrawings = function (data) {
 }
 
 const createDrawing = function (data) {
-  console.log('API Data')
-  console.log(data)
-
   return $.ajax({
     url: app.host + 'drawings/',
     method: 'POST',
@@ -42,8 +36,6 @@ const createDrawing = function (data) {
 }
 
 const deleteDrawing = function (data) {
-  console.log('API Data')
-  console.log(data)
   return $.ajax({
     url: app.host + 'drawings/' + data,
     method: 'DELETE',
@@ -54,8 +46,6 @@ const deleteDrawing = function (data) {
 }
 
 const updateDrawing = function (data) {
-  console.log('API Data')
-  console.log(data)
   return $.ajax({
     url: app.host + 'drawings/' + app.user.id + '/' + data.credentials._id,
     method: 'PATCH',

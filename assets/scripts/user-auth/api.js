@@ -1,9 +1,7 @@
 'use strict'
 const app = require('../app.js')
 
-// POST => Sign Up
 const signUp = function (data) {
-  console.log(data)
   return $.ajax({
     url: app.host + 'sign-up/',
     method: 'POST',
@@ -11,9 +9,7 @@ const signUp = function (data) {
   })
 }
 
-// Post => Sign In
 const signIn = function (data) {
-  console.log(data)
   return $.ajax({
     url: app.host + 'sign-in/',
     method: 'POST',
@@ -21,7 +17,6 @@ const signIn = function (data) {
   })
 }
 
-// Delete => Sign Out
 const signOut = function () {
   return $.ajax({
     method: 'DELETE',
@@ -32,7 +27,6 @@ const signOut = function () {
   })
 }
 
-// Patch => Change Password
 const changePassword = function (data) {
   return $.ajax({
     method: 'PATCH',

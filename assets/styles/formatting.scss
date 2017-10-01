@@ -2,13 +2,16 @@
 @import './colors';
 
 // Element Selectors ====================
+
 body {
   margin: 0;
   padding: 0;
   padding-top: 40px;
 }
 
+
 // NavBar ===============================
+
 nav {
   background-color: $white;
   border: 1px solid $black;
@@ -41,7 +44,9 @@ nav {
   margin-right: 25px;
 }
 
+
 // Header ==================================
+
 .header-container {
   border: 1px solid $black;
   height: 200px;
@@ -54,7 +59,9 @@ nav {
   text-align: center;
 }
 
-// Drawing Container
+
+// Drawing Container ======================
+
 .drawing-container {
   border: 1px solid $black;
   margin: auto;
@@ -74,10 +81,12 @@ nav {
   text-align: center;
 }
 
-// Updating drawing
+
+// Drawing Forms =======================
+
 .update-form {
-  width: 100%;
   margin-bottom: 10px;
+  width: 100%;
 }
 
 .delete-button {
