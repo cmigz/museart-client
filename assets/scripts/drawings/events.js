@@ -20,6 +20,34 @@ const onGetDrawings = function (event) {
 //   console.log(api.index())
 // }
 
+const onGetUserDrawings = function (event) {
+  api.getUserDrawings()
+    .then(ui.onGetUserDrawingsSuccess)
+    .catch(ui.onGetUserDrawingsFailure)
+}
+
+const onAddDrawing = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.createDrawing(data)
+    .then(ui.onAddDrawingSuccess)
+    .catch(ui.onAddDrawingFailure)
+}
+
+const onDeleteDrawing = function (event) {
+  const data = event
+  console.log('Events.js Data')
+  console.log(data)
+  console.log('Events This')
+  console.log(this)
+  api.deleteDrawing(data)
+    .then(ui.onDeleteDrawingSuccess)
+    .catch(ui.onDeleteDrawingFailure)
+}
+
 module.exports = {
-  onGetDrawings
+  onGetDrawings,
+  onGetUserDrawings,
+  onAddDrawing,
+  onDeleteDrawing
 }

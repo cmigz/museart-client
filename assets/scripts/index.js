@@ -8,6 +8,17 @@ const drawingEvents = require('./drawings/events')
 $(() => {
   setAPIOrigin(location, config)
   drawingEvents.onGetDrawings()
+  $('#nav-my-drawings').click(drawingEvents.onGetUserDrawings)
+  $('#create-drawing').on('submit', drawingEvents.onAddDrawing)
+
+  $(document).on('click', '#delete-drawing', function (event) {
+    event.preventDefault()
+    console.log('Index This')
+    console.log(this)
+    console.log('Index Event')
+    console.log(event.target.id)
+    drawingEvents.onDeleteDrawing(event.target.id)
+  })
 
   // User Auth Actions
   $('#sign-up').on('submit', userEvents.onSignUp)
