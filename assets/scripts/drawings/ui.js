@@ -1,5 +1,6 @@
 'use strict'
 const app = require('../app.js')
+const events = require('./events.js')
 
 // Getting all drawings
 const loopAllDrawings = (data) => {
@@ -32,6 +33,7 @@ const loopAllDrawings = (data) => {
 const loopUserDrawings = (data) => {
   console.log('UI.js User Drawings Data')
   console.log(data)
+  $('#user-drawings').children().remove()
   for (let i = 0; i < data.drawings.length; i++) {
     $('#user-drawings').append(
       '<div class="drawing-container">' +

@@ -8,7 +8,12 @@ const drawingEvents = require('./drawings/events')
 $(() => {
   setAPIOrigin(location, config)
   drawingEvents.onGetDrawings()
-  $('#nav-my-drawings').click(drawingEvents.onGetUserDrawings)
+  $('#nav-my-drawings').on('click', function () {
+    drawingEvents.onGetUserDrawings()
+    $('#user-drawings').show()
+    $('#create-drawing').show()
+  })
+
   $('#create-drawing').on('submit', drawingEvents.onAddDrawing)
 
   $(document).on('click', '#delete-drawing', function (event) {
@@ -18,6 +23,13 @@ $(() => {
     console.log('Index Event')
     console.log(event.target.id)
     drawingEvents.onDeleteDrawing(event.target.id)
+  })
+
+  $('#nav-home').on('click', function () {
+    $('#user-drawings, #create-drawing').hide()
+    $('#home-feed').show()
+    $('#home-feed').children().remove()
+    drawingEvents.onGetDrawings()
   })
 
   // User Auth Actions

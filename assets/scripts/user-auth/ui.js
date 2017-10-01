@@ -33,6 +33,7 @@ const onSignOutSuccess = () => {
   $('#nav-sign-out, #nav-change-password, #nav-my-drawings').addClass('hidden')
   $('#nav-sign-up, #nav-sign-in').show()
   $('#home-feed').show()
+  $('#create-drawing').hide()
 }
 
 const onSignOutFailure = () => {
