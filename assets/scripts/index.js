@@ -4,6 +4,7 @@ const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const userEvents = require('./user-auth/events')
 const drawingEvents = require('./drawings/events')
+const drawingsApi = require('./drawings/api')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -32,6 +33,7 @@ $(() => {
     console.log('Index Event Target')
     console.log(event)
     drawingEvents.onUpdateDrawing(event)
+    drawingsApi.getUserDrawings()
   })
 
   $('#nav-home').on('click', function () {
