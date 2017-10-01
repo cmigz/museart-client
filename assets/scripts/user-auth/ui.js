@@ -16,6 +16,8 @@ const onSignUpFailure = (error) => {
 const onSignInSuccess = (data) => {
   app.user = data.user
   console.log('Sign In Successful')
+  $('#nav-sign-up, #nav-sign-in').hide()
+  $('#nav-sign-out, #nav-change-password, #nav-my-drawings').removeClass('hidden')
 }
 
 const onSignInFailure = (error) => {
@@ -27,6 +29,8 @@ const onSignInFailure = (error) => {
 const onSignOutSuccess = () => {
   app.user = null
   console.log('Sign Out Successful')
+  $('#nav-sign-out, #nav-change-password, #nav-my-drawings').addClass('hidden')
+  $('#nav-sign-up, #nav-sign-in').show()
 }
 
 const onSignOutFailure = () => {

@@ -11,76 +11,66 @@
     <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
     <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
   </head>
   <body class="container-fluid">
-    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-      <!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button> -->
-      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-      <div class="" id="navbarNav">
-        <ul class="navbar-nav">
-
-          <!-- User Sign Up -->
-          <li class="nav-item dropdown">
-            <button class=" btn btn-primary nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Sign Up
-            </button>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <form id="sign-up">
-                <fieldset>
-                  <input type="text" name="credentials[email]" value="" placeholder="Email">
-                  <input type="password" name="credentials[password]" value="" placeholder="Password">
-                  <input type="password" name="credentials[password_confirmation]" value="" placeholder="Confirm Password">
-                  <input class="btn btn-success" type="submit" name="submit" value="Sign up!!">
-                </fieldset>
-              </form>
-            </div>
-          </li>
-
-          <!-- User Sign In -->
-          <li class="nav-item dropdown">
-            <button class=" btn btn-primary nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Sign In
-            </button>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <form id="sign-in">
-                <fieldset>
-                  <input type="text" name="credentials[email]" value="" placeholder="Email">
-                  <input type="password" name="credentials[password]" value="" placeholder="Password">
-                  <input class="btn btn-success" type="submit" name="submit" value="Sign In!!">
-                </fieldset>
-              </form>
-            </div>
-          </li>
-
-          <!-- User Sign Out -->
-          <li class="nav-item dropdown">
-            <form id="sign-out" class="">
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+        <li id="nav-my-drawings" class="hidden">My Drawings</li>
+        <li id="nav-sign-up" class="nav-item dropdown auth">
+          <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Sign Up
+          </button>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <form id="sign-up">
               <fieldset>
-                <input class="btn btn-primary" type="submit" name="submit" value="Sign out!">
+                <input type="text" name="credentials[email]" value="" placeholder="Email">
+                <input type="password" name="credentials[password]" value="" placeholder="Password">
+                <input type="password" name="credentials[password_confirmation]" value="" placeholder="Confirm Password">
+                <input class="btn btn-success" type="submit" name="submit" value="Sign up!!">
               </fieldset>
             </form>
-          </li>
-
-          <!-- User Change Password -->
-          <li class="nav-item dropdown">
-            <button class=" btn btn-primary nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Change Password
-            </button>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <form id="change-password">
-                <fieldset>
-                  <input type="password" name="passwords[old]" value="" placeholder="Original Password">
-                  <input type="password" name="passwords[new]" value="" placeholder="New Password">
-                  <input class="btn btn-success" type="submit" name="submit" value="Change Password">
-                </fieldset>
-              </form>
-            </div>
-          </li>
-
-        </ul>
-      </div>
+          </div>
+        </li>
+        <li id="nav-sign-in" class="nav-item dropdown auth">
+          <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Sign In
+          </button>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <form id="sign-in">
+              <fieldset>
+                <input type="text" name="credentials[email]" value="" placeholder="Email">
+                <input type="password" name="credentials[password]" value="" placeholder="Password">
+                <input class="btn btn-success" type="submit" name="submit" value="Sign In!!">
+              </fieldset>
+            </form>
+          </div>
+        </li>
+        <li id="nav-sign-out" class="nav-item dropdown auth hidden">
+          <form id="sign-out" class="">
+            <fieldset>
+              <input class="" type="submit" name="submit" value="Sign out!">
+            </fieldset>
+          </form>
+        </li>
+        <li id="nav-change-password" class="nav-item dropdown auth hidden">
+          <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Change Password
+          </button>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <form id="change-password">
+              <fieldset>
+                <input type="password" name="passwords[old]" value="" placeholder="Original Password">
+                <input type="password" name="passwords[new]" value="" placeholder="New Password">
+                <input class="btn btn-success" type="submit" name="submit" value="Change Password">
+              </fieldset>
+            </form>
+          </div>
+        </li>
+      </ul>
     </nav>
     <header>
       <div class="header-container">
