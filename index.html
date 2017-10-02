@@ -13,14 +13,15 @@
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
   </head>
-  <body class="container-fluid">
+  <body >
     <nav>
       <ul>
         <li id="nav-home">Home</li>
         <li>About</li>
         <li>Contact</li>
         <li id="nav-my-drawings" class="hidden">My Drawings</li>
-        <li id="nav-sign-up" class="nav-item dropdown auth">
+        <!-- Sign Up Dropdown/Form -->
+        <li id="nav-sign-up" class="drowdown auth">
           <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Sign Up
           </button>
@@ -35,7 +36,8 @@
             </form>
           </div>
         </li>
-        <li id="nav-sign-in" class="nav-item dropdown auth">
+        <!-- Sign In Dropdown/Form -->
+        <li id="nav-sign-in" class="dropdown auth">
           <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Sign In
           </button>
@@ -49,7 +51,7 @@
             </form>
           </div>
         </li>
-        <li id="nav-sign-out" class="nav-item dropdown auth hidden">
+        <li id="nav-sign-out" class="dropdown auth hidden">
           <form id="sign-out" class="">
             <fieldset>
               <input class="" type="submit" name="submit" value="Sign out!">
@@ -73,9 +75,28 @@
       </ul>
     </nav>
     <header>
-      <div class="header-container">
-        <h1 class="site-name">MuseArt</h1>
+      <!-- <div class="header-container">
+        <img class="header-image" alt="Musical Notes" src="http://www.oogazone.com/wp-content/uploads/unique-post-media-for-choir-staff-symbols-symbolsnet-retreat-cdr.jpg">
+        <p id="site-name">MuseArt</p>
+        <img class="header-image" alt="Musical Notes" src="http://www.oogazone.com/wp-content/uploads/unique-post-media-for-choir-staff-symbols-symbolsnet-retreat-cdr.jpg">
+      </div> -->
+      <div class="header-container container">
+        <div class="container-fluid">
+        <p id="site-name">
+          <span>
+            <img class="header-image" alt="Musical Notes" src="http://www.oogazone.com/wp-content/uploads/unique-post-media-for-choir-staff-symbols-symbolsnet-retreat-cdr.jpg">
+          </span>
+          MuseArt
+          <span class="header-image">
+            <img class="header-image" alt="Musical Notes" src="http://www.oogazone.com/wp-content/uploads/unique-post-media-for-choir-staff-symbols-symbolsnet-retreat-cdr.jpg">
+          </span>
+        </p>
+        <div class="row">
+          <img class="header-image-secondary" alt="Scribble" src="http://www.cnhkeyclub.org/downloads/Resources/Graphics/Scribble%20Pencil/Template_KeyClub_Gray%20scribble%20pencil%20graphic.png.png">
+        </div>
       </div>
+      </div>
+
     </header>
     <main>
       <div id="home-feed"></div>
