@@ -5,11 +5,25 @@ const app = require('../app.js')
 const onSignUpSuccess = (data) => {
   app.user = data.user
   console.log('Sign Up Successful')
+  // $('#sign-up').append(
+  //   '<p class="success"> Sign Up Successful!</p>'
+  // ).delay(5000).remove('p')
+  $('<p class="success">Sign Up Successful!</p>').insertAfter('#sign-up').delay(3000).fadeOut()
+  $('#sign-up').find('.error').remove()
+}
+
+const badPasswordConfirmation = () => {
+  $('#sign-up').append(
+    '<p class="error"> Password Confirmation Not Matching</p>'
+  )
 }
 
 const onSignUpFailure = (error) => {
   console.error(error)
   console.log('Sign Up Failed')
+  $('#sign-up').append(
+    '<p class="error">Sorry, Email Already In Use</p>'
+  )
 }
 
 // Sign In
@@ -58,5 +72,6 @@ module.exports = {
   onSignOutSuccess,
   onSignOutFailure,
   onChangePasswordSuccess,
-  onChangePasswordFailure
+  onChangePasswordFailure,
+  badPasswordConfirmation
 }

@@ -143,3 +143,18 @@ nav {
 .delete-button {
   margin: 5px 0;
 }
+
+// Error Handling =======================
+.success {
+  color: $success;
+  text-align: center;
+  margin: 10 10 0;
+  font-size: 20px;
+  padding: none;
+}
+
+.error {
+  color: $error;
+  text-align: center;
+  font-size: 20px;
+}
