@@ -57,7 +57,7 @@ nav {
   }
 
   > div > form > fieldset > input {
-    margin: 5px;
+    margin: 5px auto;
   }
 
   > div > form > fieldset > .btn {
@@ -109,6 +109,9 @@ nav {
   display: inline;
 }
 
+#nav-change-password > button {
+  font-size: 20px;
+}
 
 // Drawing Container ======================
 

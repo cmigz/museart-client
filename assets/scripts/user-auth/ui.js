@@ -73,10 +73,12 @@ const onSignOutFailure = () => {
 // Change Password
 const onChangePasswordSuccess = () => {
   console.log('Password Change Successful')
+  $('<p class="success">Password Changed</p>').insertAfter('#change-password').delay(3000).fadeOut()
 }
 
 const onChangePasswordFailure = () => {
   console.log('Password Change Failed')
+  $('<p class="error">Original Password Incorrect</p>').insertAfter('#change-password').delay(3000).fadeOut()
 }
 
 module.exports = {
