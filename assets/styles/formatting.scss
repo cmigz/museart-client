@@ -137,6 +137,19 @@ nav {
 
 
 // Drawing Forms =======================
+.create-container {
+  border: 5px solid $blue;
+  background-color: $white;
+  width: 80%;
+  margin: 10px auto 0;
+
+  > form > fieldset > input {
+    display: block;
+    margin: 10px auto;
+    width: 60%;
+  }
+}
+
 
 .update-form {
   margin-bottom: 10px;
