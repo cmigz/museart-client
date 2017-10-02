@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'http://localhost:4741/'
+    production: 'https://thawing-gorge-11843.herokuapp.com/'
   }
 }
 

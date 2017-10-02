@@ -1,5 +1,5 @@
 'use strict'
 
 module.exports = {
-  host: 'http://localhost:4741/'
+  host: 'https://thawing-gorge-11843.herokuapp.com/'
 }
