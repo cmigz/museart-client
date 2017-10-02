@@ -99,6 +99,12 @@ const onGetUserDrawingsFailure = (data) => {
 const onAddDrawingSuccess = (data) => {
   console.log('Add Drawing Success')
   console.log(data)
+  $('<p class="success">Drawing Successfully Added!</p>').insertAfter('#create-drawing').delay(3000).fadeOut()
+  $('#create-drawing').find('.error').remove()
+}
+
+const onAddDrawingIncomplete = () => {
+  $('<p class="error">Please Fill All Fields</p>').insertAfter('#create-drawing').delay(3000).fadeOut()
 }
 
 const onAddDrawingFailure = (data) => {
@@ -131,5 +137,6 @@ module.exports = {
   onDeleteDrawingSuccess,
   onDeleteDrawingFailure,
   onUpdateDrawingSuccess,
-  onUpdateDrawingFailure
+  onUpdateDrawingFailure,
+  onAddDrawingIncomplete
 }

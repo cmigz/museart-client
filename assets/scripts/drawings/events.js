@@ -18,9 +18,18 @@ const onGetUserDrawings = function (event) {
 const onAddDrawing = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.createDrawing(data)
-    .then(ui.onAddDrawingSuccess)
-    .catch(ui.onAddDrawingFailure)
+  console.log('Event Add Drawing Data')
+  console.log(data)
+  //   if (Object.values(obj).indexOf('test1') > -1) {
+  //    console.log('has test1');
+  // }
+  if (Object.values(data.credentials).indexOf('') > -1) {
+    ui.onAddDrawingIncomplete()
+  } else {
+    api.createDrawing(data)
+      .then(ui.onAddDrawingSuccess)
+      .catch(ui.onAddDrawingFailure)
+  }
 }
 
 const onDeleteDrawing = function (event) {
