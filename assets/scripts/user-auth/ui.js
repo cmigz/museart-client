@@ -13,14 +13,23 @@ const onSignUpSuccess = (data) => {
 }
 
 const badPasswordConfirmation = () => {
+  $('#sign-up').find('.error').remove()
   $('#sign-up').append(
     '<p class="error"> Password Confirmation Not Matching</p>'
+  )
+}
+
+const incompleteSignUpError = () => {
+  $('#sign-up').find('.error').remove()
+  $('#sign-up').append(
+    '<p class="error">Please Fill All Fields</p>'
   )
 }
 
 const onSignUpFailure = (error) => {
   console.error(error)
   console.log('Sign Up Failed')
+  $('#sign-up').find('.error').remove()
   $('#sign-up').append(
     '<p class="error">Sorry, Email Already In Use</p>'
   )
@@ -29,15 +38,21 @@ const onSignUpFailure = (error) => {
 // Sign In
 const onSignInSuccess = (data) => {
   app.user = data.user
+  console.log(app.user)
   console.log('Sign In Successful')
   $('#nav-sign-up, #nav-sign-in').hide()
   $('#nav-sign-out, #nav-change-password, #nav-my-drawings').removeClass('hidden')
-  console.log(app.user._id)
+  $('<li class="success">Sign In Successful!</li>').insertAfter('#nav-my-drawings').delay(3000).fadeOut()
+  $('#sign-in').find('.error').remove()
 }
 
 const onSignInFailure = (error) => {
   console.error(error)
   console.log('Sign In Failed')
+  $('#sign-in').find('.error').remove()
+  $('#sign-in').append(
+    '<p class="error">Username and or Password Incorrect</p>'
+  )
 }
 
 // Sign Out
@@ -73,5 +88,6 @@ module.exports = {
   onSignOutFailure,
   onChangePasswordSuccess,
   onChangePasswordFailure,
-  badPasswordConfirmation
+  badPasswordConfirmation,
+  incompleteSignUpError
 }

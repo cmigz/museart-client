@@ -6,9 +6,12 @@ const ui = require('./ui.js')
 const onSignUp = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('Sign Up Data')
-  console.log(data)
-  if (data.credentials.password === data.credentials.password_confirmation) {
+  if (data.credentials.email === '' ||
+      data.credentials.password === '' ||
+      data.credentials.password_confirmation === ''
+  ) {
+    ui.incompleteSignUpError()
+  } else if (data.credentials.password === data.credentials.password_confirmation) {
     api.signUp(data)
       .done(ui.onSignUpSuccess)
       .fail(ui.onSignUpFailure)
