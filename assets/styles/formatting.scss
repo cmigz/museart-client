@@ -77,6 +77,10 @@ nav {
   color: $black;
 }
 
+#nav-change-password > button {
+  font-size: 20px;
+}
+
 
 // Header ==================================
 
@@ -88,30 +92,14 @@ nav {
   width: 95%;
 }
 
-.header-image {
-  height: 50px;
-  margin-left: 10%;
-  margin-right: 5%;
-}
-
-.header-image-secondary {
-  width: 80%;
-  display: inline;
-  margin: 10px 75px;
-}
-
-#site-name {
-  font-family: $header-font;
-  font-size: 52px;
-  // text-align: center;
+#logo {
+  width: 70%;
+  display: block;
   margin: 0 auto;
-  margin-left: 40px;
-  display: inline;
 }
 
-#nav-change-password > button {
-  font-size: 20px;
-}
+
+
 
 // Drawing Container ======================
 
