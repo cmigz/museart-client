@@ -128,6 +128,8 @@ const onAddDrawingFailure = (data) => {
 
 const onDeleteDrawingSuccess = () => {
   console.log('Delete Successfull')
+  $('#delete-drawing').siblings('.error').remove()
+  $('<p class="success">Drawing Deleted</p>').insertBefore('#delete-drawing')
 }
 
 const onDeleteDrawingFailure = () => {
