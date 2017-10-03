@@ -8,15 +8,16 @@ const loopAllDrawings = (data) => {
         '<div class="container">' +
           '<div class="row">' +
             '<div class="col-12 col-md-auto">' +
+              '<h1 class="drawing-header">' + data.drawings[i].songTitle + '</h1>' +
               '<img class="drawing-image" src="' + data.drawings[i].imageLink + '">' +
             '</div>' +
           '</div>' +
           '<div class="row">' +
             '<div class="col col-md-8">' +
-              '<p>' + data.drawings[i].songTitle + ': ' + data.drawings[i].songArtist + '</p>' +
+              '<p class="song-info"><span>Song Title:</span> ' + data.drawings[i].songTitle + '<br><span>Artist:</span> ' + data.drawings[i].songArtist + '</p>' +
             '</div>' +
             '<div class="col-6 col-md-4">' +
-              '<p>' + '<a target="about_blank" href="' + data.drawings[i].songLink + '">Check Out the Song</a>' + '</p>' +
+              '<p class="check-out-song">' + '<a target="about_blank" href="' + data.drawings[i].songLink + '">Check Out the Song</a>' + '</p>' +
             '</div>' +
           '</div>' +
           '<div class="row">' +

@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   padding-top: 80px;
-    background-image: url('https://st2.depositphotos.com/3394007/5764/v/950/depositphotos_57643515-stock-illustration-scribble-cell-pattern-hand-drawn.jpg')
+  background-image: url('https://st2.depositphotos.com/3394007/5764/v/950/depositphotos_57643515-stock-illustration-scribble-cell-pattern-hand-drawn.jpg')
 }
 
 
@@ -109,6 +109,16 @@ nav {
   margin: auto;
   margin-top: 10px;
   width: 90%;
+
+  > div {
+    margin: 10px;
+  }
+}
+
+.drawing-header {
+  font-family: $header-font;
+  margin: 15px;
+  text-align: center;
 }
 
 .drawing-image {
@@ -117,6 +127,22 @@ nav {
   display: block;
   width: 600px;
   height: 300px;
+}
+
+.song-info {
+  margin-left: 30px;
+  font-size: 24px;
+
+  > span {
+    font-weight: bold;
+
+  }
+}
+
+.check-out-song {
+  font-size: 24px;
+  text-align: right;
+  margin-right: 30px;
 }
 
 .drawing-lyrics {
