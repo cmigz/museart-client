@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   padding-top: 80px;
-    background-image: url('https://st2.depositphotos.com/3394007/5764/v/950/depositphotos_57643515-stock-illustration-scribble-cell-pattern-hand-drawn.jpg')
+  background-image: url('https://st2.depositphotos.com/3394007/5764/v/950/depositphotos_57643515-stock-illustration-scribble-cell-pattern-hand-drawn.jpg')
 }
 
 
@@ -77,6 +77,10 @@ nav {
   color: $black;
 }
 
+#nav-change-password > button {
+  font-size: 20px;
+}
+
 
 // Header ==================================
 
@@ -88,30 +92,14 @@ nav {
   width: 95%;
 }
 
-.header-image {
-  height: 50px;
-  margin-left: 10%;
-  margin-right: 5%;
-}
-
-.header-image-secondary {
-  width: 80%;
-  display: inline;
-  margin: 10px 75px;
-}
-
-#site-name {
-  font-family: $header-font;
-  font-size: 52px;
-  // text-align: center;
+#logo {
+  width: 70%;
+  display: block;
   margin: 0 auto;
-  margin-left: 40px;
-  display: inline;
 }
 
-#nav-change-password > button {
-  font-size: 20px;
-}
+
+
 
 // Drawing Container ======================
 
@@ -121,6 +109,16 @@ nav {
   margin: auto;
   margin-top: 10px;
   width: 90%;
+
+  > div {
+    margin: 10px;
+  }
+}
+
+.drawing-header {
+  font-family: $header-font;
+  margin: 15px;
+  text-align: center;
 }
 
 .drawing-image {
@@ -129,6 +127,22 @@ nav {
   display: block;
   width: 600px;
   height: 300px;
+}
+
+.song-info {
+  margin-left: 30px;
+  font-size: 24px;
+
+  > span {
+    font-weight: bold;
+
+  }
+}
+
+.check-out-song {
+  font-size: 24px;
+  text-align: right;
+  margin-right: 30px;
 }
 
 .drawing-lyrics {
@@ -173,5 +187,12 @@ nav {
   color: $error;
   text-align: center;
   font-size: 20px;
+  margin: 10 10 0;
+}
+
+.error-small {
+  color: $error;
+  text-align: center;
+  font-size: 12px;
   margin: 10 10 0;
 }

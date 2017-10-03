@@ -8,15 +8,16 @@ const loopAllDrawings = (data) => {
         '<div class="container">' +
           '<div class="row">' +
             '<div class="col-12 col-md-auto">' +
+              '<h1 class="drawing-header">' + data.drawings[i].songTitle + '</h1>' +
               '<img class="drawing-image" src="' + data.drawings[i].imageLink + '">' +
             '</div>' +
           '</div>' +
           '<div class="row">' +
             '<div class="col col-md-8">' +
-              '<p>' + data.drawings[i].songTitle + ': ' + data.drawings[i].songArtist + '</p>' +
+              '<p class="song-info"><span>Song Title:</span> ' + data.drawings[i].songTitle + '<br><span>Artist:</span> ' + data.drawings[i].songArtist + '</p>' +
             '</div>' +
             '<div class="col-6 col-md-4">' +
-              '<p>' + '<a target="about_blank" href="' + data.drawings[i].songLink + '">Check Out the Song</a>' + '</p>' +
+              '<p class="check-out-song">' + '<a target="about_blank" href="' + data.drawings[i].songLink + '">Check Out the Song</a>' + '</p>' +
             '</div>' +
           '</div>' +
           '<div class="row">' +
@@ -99,6 +100,7 @@ const onGetUserDrawingsFailure = (data) => {
 const onAddDrawingSuccess = (data) => {
   console.log('Add Drawing Success')
   console.log(data)
+  $('#image-link').siblings('.error-small').remove()
   $('<p class="success">Drawing Successfully Added!</p>').insertAfter('#create-drawing').delay(3000).fadeOut()
   $('#create-drawing').find('.error').remove()
 }
@@ -107,12 +109,28 @@ const onAddDrawingIncomplete = () => {
   $('<p class="error">Please Fill All Fields</p>').insertAfter('#create-drawing').delay(3000).fadeOut()
 }
 
+const onAddDrawingBadLink = () => {
+  console.log('bad link')
+  // $('#image-link').append('<p class="error">Please provide proper link</p>')
+  $('#image-link').siblings('.error-small').remove()
+  $('<p class="error-small">Error: Incorrect Link<br>Link must end with one of the following: .jpg, .png, .jpeg</p>').insertAfter('#image-link')
+}
+
+const onAddDrawingBadUrl = () => {
+  console.log('bad url')
+  // $('#image-link').append('<p class="error">Please provide proper link</p>')
+  $('#image-link').siblings('.error-small').remove()
+  $('<p class="error-small">Error: Please Provide Valid URL</p>').insertAfter('#song-link')
+}
+
 const onAddDrawingFailure = (data) => {
   console.log('Add Drawing Failed')
 }
 
 const onDeleteDrawingSuccess = () => {
   console.log('Delete Successfull')
+  $('#delete-drawing').siblings('.error').remove()
+  $('<p class="success">Drawing Deleted</p>').insertBefore('#delete-drawing')
 }
 
 const onDeleteDrawingFailure = () => {
@@ -121,6 +139,26 @@ const onDeleteDrawingFailure = () => {
 
 const onUpdateDrawingSuccess = () => {
   console.log('Update Successful')
+  $('#update-drawing').siblings('.error').remove()
+  $('<p class="success">Drawing Updated</p>').insertAfter('#update-drawing').delay(3000).fadeOut()
+}
+
+const onUpdateDrawingIncomplete = () => {
+  console.log('Incomplete')
+  $('#update-drawing').siblings('.error').remove()
+  $('<p class="error">Please Fill All Fields</p>').insertAfter('#update-drawing')
+}
+
+const onUpdateDrawingBadLink = () => {
+  console.log('bad img link')
+  $('#update-drawing').siblings('.error').remove()
+  $('<p class="error">Error: Incorrect Image Link<br>Link must end with one of the following: .jpg, .png, .jpeg</p>').insertAfter('#update-drawing')
+}
+
+const onUpdateDrawingBadUrl = () => {
+  console.log('bad url')
+  $('#update-drawing').siblings('.error').remove()
+  $('<p class="error">Error: Please Provide Valid URL</p>').insertAfter('#update-drawing')
 }
 
 const onUpdateDrawingFailure = () => {
@@ -138,5 +176,10 @@ module.exports = {
   onDeleteDrawingFailure,
   onUpdateDrawingSuccess,
   onUpdateDrawingFailure,
-  onAddDrawingIncomplete
+  onAddDrawingIncomplete,
+  onAddDrawingBadLink,
+  onAddDrawingBadUrl,
+  onUpdateDrawingIncomplete,
+  onUpdateDrawingBadLink,
+  onUpdateDrawingBadUrl
 }
