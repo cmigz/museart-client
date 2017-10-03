@@ -99,12 +99,27 @@ const onGetUserDrawingsFailure = (data) => {
 const onAddDrawingSuccess = (data) => {
   console.log('Add Drawing Success')
   console.log(data)
+  $('#image-link').siblings('.error-small').remove()
   $('<p class="success">Drawing Successfully Added!</p>').insertAfter('#create-drawing').delay(3000).fadeOut()
   $('#create-drawing').find('.error').remove()
 }
 
 const onAddDrawingIncomplete = () => {
   $('<p class="error">Please Fill All Fields</p>').insertAfter('#create-drawing').delay(3000).fadeOut()
+}
+
+const onAddDrawingBadLink = () => {
+  console.log('bad link')
+  // $('#image-link').append('<p class="error">Please provide proper link</p>')
+  $('#image-link').siblings('.error-small').remove()
+  $('<p class="error-small">Error: Incorrect Link<br>Link must end with one of the following: .jpg, .png, .jpeg</p>').insertAfter('#image-link')
+}
+
+const onAddDrawingBadUrl = () => {
+  console.log('bad url')
+  // $('#image-link').append('<p class="error">Please provide proper link</p>')
+  $('#image-link').siblings('.error-small').remove()
+  $('<p class="error-small">Error: Please Provide Valid URL</p>').insertAfter('#song-link')
 }
 
 const onAddDrawingFailure = (data) => {
@@ -138,5 +153,7 @@ module.exports = {
   onDeleteDrawingFailure,
   onUpdateDrawingSuccess,
   onUpdateDrawingFailure,
-  onAddDrawingIncomplete
+  onAddDrawingIncomplete,
+  onAddDrawingBadLink,
+  onAddDrawingBadUrl
 }
