@@ -44,9 +44,20 @@ const onDeleteDrawing = function (event) {
 
 const onUpdateDrawing = function (event) {
   const data = getFormFields(event.currentTarget)
-  api.updateDrawing(data)
-    .then(ui.onUpdateDrawingSuccess)
-    .catch(ui.onUpdateDrawingFailure)
+  const imgCheck = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|png|jpeg)/
+  const urlCheck = /[-a-zA-Z0-9@:%_.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_.~#?&//=]*)?/
+  console.log(data)
+  if (Object.values(data.credentials).indexOf('') > -1) {
+    ui.onUpdateDrawingIncomplete()
+  } else if (!data.credentials.imageLink.match(imgCheck)) {
+    ui.onUpdateDrawingBadLink()
+  } else if (!data.credentials.songLink.match(urlCheck)) {
+    ui.onUpdateDrawingBadUrl()
+  } else {
+    api.updateDrawing(data)
+      .then(ui.onUpdateDrawingSuccess)
+      .catch(ui.onUpdateDrawingFailure)
+  }
 }
 
 module.exports = {

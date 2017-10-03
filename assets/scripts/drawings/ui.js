@@ -136,6 +136,26 @@ const onDeleteDrawingFailure = () => {
 
 const onUpdateDrawingSuccess = () => {
   console.log('Update Successful')
+  $('#update-drawing').siblings('.error').remove()
+  $('<p class="success">Drawing Updated</p>').insertAfter('#update-drawing').delay(3000).fadeOut()
+}
+
+const onUpdateDrawingIncomplete = () => {
+  console.log('Incomplete')
+  $('#update-drawing').siblings('.error').remove()
+  $('<p class="error">Please Fill All Fields</p>').insertAfter('#update-drawing')
+}
+
+const onUpdateDrawingBadLink = () => {
+  console.log('bad img link')
+  $('#update-drawing').siblings('.error').remove()
+  $('<p class="error">Error: Incorrect Image Link<br>Link must end with one of the following: .jpg, .png, .jpeg</p>').insertAfter('#update-drawing')
+}
+
+const onUpdateDrawingBadUrl = () => {
+  console.log('bad url')
+  $('#update-drawing').siblings('.error').remove()
+  $('<p class="error">Error: Please Provide Valid URL</p>').insertAfter('#update-drawing')
 }
 
 const onUpdateDrawingFailure = () => {
@@ -155,5 +175,8 @@ module.exports = {
   onUpdateDrawingFailure,
   onAddDrawingIncomplete,
   onAddDrawingBadLink,
-  onAddDrawingBadUrl
+  onAddDrawingBadUrl,
+  onUpdateDrawingIncomplete,
+  onUpdateDrawingBadLink,
+  onUpdateDrawingBadUrl
 }
