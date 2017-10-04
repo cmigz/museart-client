@@ -33,20 +33,20 @@ $(() => {
   // Delete-Drawing Handler
   $(document).on('click', '#delete-drawing', function (event) {
     event.preventDefault()
-    console.log('Index This')
-    console.log(this)
-    console.log('Index Event')
-    console.log(event.target.id)
+    // console.log('Index This')
+    // console.log(this)
+    // console.log('Index Event')
+    // console.log(event.target.id)
     drawingEvents.onDeleteDrawing(event.target.id)
   })
 
   // Update-Drawing Handler
   $(document).on('submit', '#update-drawing', function (event) {
     event.preventDefault()
-    console.log('Index This')
-    console.log(this)
-    console.log('Index Event Target')
-    console.log(event)
+    // console.log('Index This')
+    // console.log(this)
+    // console.log('Index Event Target')
+    // console.log(event)
     drawingEvents.onUpdateDrawing(event)
     drawingsApi.getUserDrawings()
   })

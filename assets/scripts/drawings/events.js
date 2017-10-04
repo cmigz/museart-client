@@ -20,8 +20,8 @@ const onAddDrawing = function (event) {
   const urlCheck = /[-a-zA-Z0-9@:%_.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_.~#?&//=]*)?/
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('Event Add Drawing Data')
-  console.log(data)
+  // console.log('Event Add Drawing Data')
+  // console.log(data)
   if (Object.values(data.credentials).indexOf('') > -1) {
     ui.onAddDrawingIncomplete()
   } else if (!data.credentials.imageLink.match(imgCheck)) {
@@ -46,7 +46,7 @@ const onUpdateDrawing = function (event) {
   const data = getFormFields(event.currentTarget)
   const imgCheck = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|png|jpeg)/
   const urlCheck = /[-a-zA-Z0-9@:%_.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_.~#?&//=]*)?/
-  console.log(data)
+  // console.log(data)
   if (Object.values(data.credentials).indexOf('') > -1) {
     ui.onUpdateDrawingIncomplete()
   } else if (!data.credentials.imageLink.match(imgCheck)) {
