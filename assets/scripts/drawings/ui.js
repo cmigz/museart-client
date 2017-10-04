@@ -56,9 +56,9 @@ const loopUserDrawings = (data) => {
             '<fieldset>' +
               '<input class="hidden" type="text" name="credentials[_id]" value="' + data.drawings[i]._id + '">' +
               'Image Link ' + '<input type="text" class="update-form" name="credentials[imageLink]" value="' + data.drawings[i].imageLink + '">' + '<br>' +
-              'Song Title ' + '<input type="text" class="update-form" name="credentials[songTitle]" value="' + data.drawings[i].songTitle + '">' + '<br>' +
+              'Song Title <br>' + '<input type="text" class="update-form" name="credentials[songTitle]" value="' + data.drawings[i].songTitle + '">' + '<br>' +
               'Song Artist ' + '<input type="text" class="update-form" name="credentials[songArtist]" value="' + data.drawings[i].songArtist + '">' + '<br>' +
-              'Lyrics ' + '<input type="text" class="update-form" name="credentials[lyrics]" value="' + data.drawings[i].lyrics + '">' + '<br>' +
+              'Lyrics <br>' + '<input type="text" class="update-form" name="credentials[lyrics]" value="' + data.drawings[i].lyrics + '">' + '<br>' +
               'Link to Song ' + '<input type="text" class="update-form" name="credentials[songLink]" value="' + data.drawings[i].songLink + '">' + '<br>' +
               '<input id="' + data.drawings[i]._id + '"class="btn btn-success" type="submit" name="submit" value="Update Drawing">' +
             '</fieldset>' +
@@ -103,6 +103,7 @@ const onAddDrawingSuccess = (data) => {
   $('#image-link').siblings('.error-small').remove()
   $('<p class="success">Drawing Successfully Added!</p>').insertAfter('#create-drawing').delay(3000).fadeOut()
   $('#create-drawing').find('.error').remove()
+  $('input:not([type="submit"]), textarea').val('')
 }
 
 const onAddDrawingIncomplete = () => {
@@ -141,6 +142,7 @@ const onUpdateDrawingSuccess = () => {
   console.log('Update Successful')
   $('#update-drawing').siblings('.error').remove()
   $('<p class="success">Drawing Updated</p>').insertAfter('#update-drawing').delay(3000).fadeOut()
+  $('input:not([type="submit"]), textarea').val('')
 }
 
 const onUpdateDrawingIncomplete = () => {

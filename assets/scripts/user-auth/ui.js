@@ -5,11 +5,9 @@ const app = require('../app.js')
 const onSignUpSuccess = (data) => {
   app.user = data.user
   console.log('Sign Up Successful')
-  // $('#sign-up').append(
-  //   '<p class="success"> Sign Up Successful!</p>'
-  // ).delay(5000).remove('p')
   $('<p class="success">Sign Up Successful!</p>').insertAfter('#sign-up').delay(3000).fadeOut()
   $('#sign-up').find('.error').remove()
+  $('input:not([type="submit"]), textarea').val('')
 }
 
 const badPasswordConfirmation = () => {
@@ -33,6 +31,7 @@ const onSignUpFailure = (error) => {
   $('#sign-up').append(
     '<p class="error">Sorry, Email Already In Use</p>'
   )
+  $('input:not([type="submit"]), textarea').val('')
 }
 
 // Sign In
@@ -44,6 +43,7 @@ const onSignInSuccess = (data) => {
   $('#nav-sign-out, #nav-change-password, #nav-my-drawings').removeClass('hidden')
   $('<li class="success">Sign In Successful!</li>').insertAfter('#nav-my-drawings').delay(3000).fadeOut()
   $('#sign-in').find('.error').remove()
+  $('input:not([type="submit"]), textarea').val('')
 }
 
 const onSignInFailure = (error) => {
@@ -53,6 +53,7 @@ const onSignInFailure = (error) => {
   $('#sign-in').append(
     '<p class="error">Username and or Password Incorrect</p>'
   )
+  $('input:not([type="submit"]), textarea').val('')
 }
 
 // Sign Out
@@ -74,11 +75,13 @@ const onSignOutFailure = () => {
 const onChangePasswordSuccess = () => {
   console.log('Password Change Successful')
   $('<p class="success">Password Changed</p>').insertAfter('#change-password').delay(3000).fadeOut()
+  $('input:not([type="submit"]), textarea').val('')
 }
 
 const onChangePasswordFailure = () => {
   console.log('Password Change Failed')
   $('<p class="error">Original Password Incorrect</p>').insertAfter('#change-password').delay(3000).fadeOut()
+  $('input:not([type="submit"]), textarea').val('')
 }
 
 module.exports = {
