@@ -77,29 +77,29 @@ const loopUserDrawings = (data) => {
 }
 
 const onGetDrawingsSuccess = (data) => {
-  console.log('Got Drawings Success')
-  console.log(data)
+  // console.log('Got Drawings Success')
+  // console.log(data)
   loopAllDrawings(data)
 }
 
 const onGetDrawingsFailure = () => {
-  console.log('Got Drawings Failed')
+  // console.log('Got Drawings Failed')
 }
 
 const onGetUserDrawingsSuccess = (data) => {
-  console.log('Get User Drawings Success')
+  // console.log('Get User Drawings Success')
   $('#home-feed').hide()
   $('#create-drawing').removeClass('hidden')
   loopUserDrawings(data)
 }
 
 const onGetUserDrawingsFailure = (data) => {
-  console.log('Failed to get User Drawings')
+  // console.log('Failed to get User Drawings')
 }
 
 const onAddDrawingSuccess = (data) => {
-  console.log('Add Drawing Success')
-  console.log(data)
+  // console.log('Add Drawing Success')
+  // console.log(data)
   $('#image-link').siblings('.error-small').remove()
   $('<p class="success">Drawing Successfully Added!</p>').insertAfter('#create-drawing').delay(3000).fadeOut()
   $('#create-drawing').find('.error').remove()
@@ -111,60 +111,60 @@ const onAddDrawingIncomplete = () => {
 }
 
 const onAddDrawingBadLink = () => {
-  console.log('bad link')
+  // console.log('bad link')
   // $('#image-link').append('<p class="error">Please provide proper link</p>')
   $('#image-link').siblings('.error-small').remove()
   $('<p class="error-small">Error: Incorrect Link<br>Link must end with one of the following: .jpg, .png, .jpeg</p>').insertAfter('#image-link')
 }
 
 const onAddDrawingBadUrl = () => {
-  console.log('bad url')
+  // console.log('bad url')
   // $('#image-link').append('<p class="error">Please provide proper link</p>')
   $('#image-link').siblings('.error-small').remove()
   $('<p class="error-small">Error: Please Provide Valid URL</p>').insertAfter('#song-link')
 }
 
 const onAddDrawingFailure = (data) => {
-  console.log('Add Drawing Failed')
+  // console.log('Add Drawing Failed')
 }
 
 const onDeleteDrawingSuccess = () => {
-  console.log('Delete Successfull')
+  // console.log('Delete Successfull')
   $('#delete-drawing').siblings('.error').remove()
   $('<p class="success">Drawing Deleted</p>').insertBefore('#delete-drawing')
 }
 
 const onDeleteDrawingFailure = () => {
-  console.log('Delete Failed')
+  // console.log('Delete Failed')
 }
 
 const onUpdateDrawingSuccess = () => {
-  console.log('Update Successful')
+  // console.log('Update Successful')
   $('#update-drawing').siblings('.error').remove()
   $('<p class="success">Drawing Updated</p>').insertAfter('#update-drawing').delay(3000).fadeOut()
   $('input:not([type="submit"]), textarea').val('')
 }
 
 const onUpdateDrawingIncomplete = () => {
-  console.log('Incomplete')
+  // console.log('Incomplete')
   $('#update-drawing').siblings('.error').remove()
   $('<p class="error">Please Fill All Fields</p>').insertAfter('#update-drawing')
 }
 
 const onUpdateDrawingBadLink = () => {
-  console.log('bad img link')
+  // console.log('bad img link')
   $('#update-drawing').siblings('.error').remove()
   $('<p class="error">Error: Incorrect Image Link<br>Link must end with one of the following: .jpg, .png, .jpeg</p>').insertAfter('#update-drawing')
 }
 
 const onUpdateDrawingBadUrl = () => {
-  console.log('bad url')
+  // console.log('bad url')
   $('#update-drawing').siblings('.error').remove()
   $('<p class="error">Error: Please Provide Valid URL</p>').insertAfter('#update-drawing')
 }
 
 const onUpdateDrawingFailure = () => {
-  console.log('Update Failed')
+  // console.log('Update Failed')
 }
 
 module.exports = {
