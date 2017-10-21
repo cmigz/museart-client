@@ -31,6 +31,7 @@ const onAddDrawing = function (event) {
   } else {
     api.createDrawing(data)
       .then(ui.onAddDrawingSuccess)
+      .then(() => onGetUserDrawings())
       .catch(ui.onAddDrawingFailure)
   }
 }
@@ -39,6 +40,7 @@ const onDeleteDrawing = function (event) {
   const data = event
   api.deleteDrawing(data)
     .then(ui.onDeleteDrawingSuccess)
+    .then(() => onGetUserDrawings())
     .catch(ui.onDeleteDrawingFailure)
 }
 
@@ -56,6 +58,7 @@ const onUpdateDrawing = function (event) {
   } else {
     api.updateDrawing(data)
       .then(ui.onUpdateDrawingSuccess)
+      .then(() => onGetUserDrawings())
       .catch(ui.onUpdateDrawingFailure)
   }
 }
