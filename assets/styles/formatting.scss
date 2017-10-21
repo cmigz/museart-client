@@ -103,16 +103,35 @@ nav {
 
 // Drawing Container ======================
 
+#home-feed {
+  align-items: center;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .drawing-container {
   background-color: $white;
   border: 5px solid $blue;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-top: 10px;
+  padding: 20px;
   width: 90%;
+}
+
+.song-info {
+  display: flex;
+  flex-direction: row;
+  font-size: 18px;
+  justify-content: space-around;
+  text-align: center;
 
   > div {
-    margin: 10px;
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    }
 }
 
 .drawing-header {
@@ -124,32 +143,22 @@ nav {
 .drawing-image {
   border: 3px solid $blue;
   margin: 10px auto;
-  display: block;
-  width: 600px;
-  height: 300px;
-}
-
-.song-info {
-  margin-left: 30px;
-  font-size: 24px;
-
-  > span {
-    font-weight: bold;
-
-  }
+  width: 70%;
 }
 
 .check-out-song {
-  font-size: 24px;
-  text-align: right;
-  margin-right: 30px;
+  font-size: 16px;
+  text-align: center;
 }
 
 .drawing-lyrics {
+  border: 2px dashed $blue;
+  justify-content: center;
+  margin: 10px auto;
+  padding: 20px;
   text-align: center;
-  margin: 20px;
+  width: 80%;
 }
-
 
 // Drawing Forms =======================
 .create-container {

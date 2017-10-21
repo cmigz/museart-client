@@ -5,25 +5,21 @@ const loopAllDrawings = (data) => {
   for (let i = 0; i < data.drawings.length; i++) {
     $('#home-feed').append(
       '<div class="drawing-container">' +
-        '<div class="container">' +
-          '<div class="row">' +
-            '<div class="col-12 col-md-auto">' +
-              '<h1 class="drawing-header">' + data.drawings[i].songTitle + '</h1>' +
-              '<img class="drawing-image" src="' + data.drawings[i].imageLink + '">' +
-            '</div>' +
+        '<h1 class="drawing-header">' + data.drawings[i].songTitle + '</h1>' +
+        '<img class="drawing-image" src="' + data.drawings[i].imageLink + '">' +
+        '<div class="song-info">' +
+          '<div>' +
+            '<h4>- Song Title -</h4>' +
+            '<p class="song-info">' + data.drawings[i].songTitle + '</p>' +
           '</div>' +
-          '<div class="row">' +
-            '<div class="col col-md-8">' +
-              '<p class="song-info"><span>Song Title:</span> ' + data.drawings[i].songTitle + '<br><span>Artist:</span> ' + data.drawings[i].songArtist + '</p>' +
-            '</div>' +
-            '<div class="col-6 col-md-4">' +
-              '<p class="check-out-song">' + '<a target="about_blank" href="' + data.drawings[i].songLink + '">Check Out the Song</a>' + '</p>' +
-            '</div>' +
-          '</div>' +
-          '<div class="row">' +
-            '<p class="drawing-lyrics">' + data.drawings[i].lyrics + '</p>' +
+          '<div>' +
+            '<h4>- Artist -</h4>' +
+            '<p class="song-info">' + data.drawings[i].songArtist + '</p>' +
           '</div>' +
         '</div>' +
+        '<h3 class="drawing-header">Lyrics</h3>' +
+        '<p class="drawing-lyrics">' + data.drawings[i].lyrics + '</p>' +
+        '<p class="check-out-song">' + '<a target="about_blank" href="' + data.drawings[i].songLink + '">Check Out the Song</a>' + '</p>' +
       '</div>'
     )
   }
