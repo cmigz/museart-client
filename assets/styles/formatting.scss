@@ -160,6 +160,28 @@ nav {
   width: 80%;
 }
 
+#user-drawings {
+  align-items: center;
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 0 auto;
+}
+
+.update-fields {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  > input {
+    margin: 0 auto;
+  }
+
+  > .btn {
+    margin-top: 10px;
+  }
+}
+
 // Drawing Forms =======================
 .create-container {
   border: 5px solid $blue;

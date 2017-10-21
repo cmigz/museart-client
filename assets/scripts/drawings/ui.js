@@ -30,44 +30,41 @@ const loopUserDrawings = (data) => {
   for (let i = 0; i < data.drawings.length; i++) {
     $('#user-drawings').append(
       '<div class="drawing-container">' +
-        '<div class="container">' +
-          '<div class="row">' +
-            '<div class="col-12 col-md-auto">' +
-              '<img class="drawing-image" src="' + data.drawings[i].imageLink + '">' +
-            '</div>' +
+        '<h1 class="drawing-header">' + data.drawings[i].songTitle + '</h1>' +
+        '<img class="drawing-image" src="' + data.drawings[i].imageLink + '">' +
+        '<div class="song-info">' +
+          '<div>' +
+            '<h4>- Song Title -</h4>' +
+            '<p class="song-info">' + data.drawings[i].songTitle + '</p>' +
           '</div>' +
-          '<div class="row">' +
-            '<div class="col col-md-8">' +
-              '<p>' + data.drawings[i].songTitle + ': ' + data.drawings[i].songArtist + '</p>' +
-            '</div>' +
-            '<div class="col-6 col-md-4">' +
-              '<p>' + '<a target="about_blank" href="' + data.drawings[i].songLink + '">Check Out the Song</a>' + '</p>' +
-            '</div>' +
+          '<div>' +
+            '<h4>- Artist -</h4>' +
+            '<p class="song-info">' + data.drawings[i].songArtist + '</p>' +
           '</div>' +
-          '<div class="row">' +
-            '<p class="drawing-lyrics">' + data.drawings[i].lyrics + '</p>' +
-          '</div>' +
-          // Update Drawing Form
+        '</div>' +
+        '<h3 class="drawing-header">Lyrics</h3>' +
+        '<p class="drawing-lyrics">' + data.drawings[i].lyrics + '</p>' +
+        '<p class="check-out-song">' + '<a target="about_blank" href="' + data.drawings[i].songLink + '">Check Out the Song</a>' + '</p>' +
+        '<h3 class="drawing-header"> Update Drawing </h3>' +
+        '<div>' +
           '<form id="update-drawing">' +
-            '<fieldset>' +
+            '<fieldset class="update-fields">' +
               '<input class="hidden" type="text" name="credentials[_id]" value="' + data.drawings[i]._id + '">' +
-              'Image Link ' + '<input type="text" class="update-form" name="credentials[imageLink]" value="' + data.drawings[i].imageLink + '">' + '<br>' +
+              'Image Link <br>' + '<input type="text" class="update-form" name="credentials[imageLink]" value="' + data.drawings[i].imageLink + '">' + '<br>' +
               'Song Title <br>' + '<input type="text" class="update-form" name="credentials[songTitle]" value="' + data.drawings[i].songTitle + '">' + '<br>' +
-              'Song Artist ' + '<input type="text" class="update-form" name="credentials[songArtist]" value="' + data.drawings[i].songArtist + '">' + '<br>' +
+              'Song Artist <br>' + '<input type="text" class="update-form" name="credentials[songArtist]" value="' + data.drawings[i].songArtist + '">' + '<br>' +
               'Lyrics <br>' + '<input type="text" class="update-form" name="credentials[lyrics]" value="' + data.drawings[i].lyrics + '">' + '<br>' +
-              'Link to Song ' + '<input type="text" class="update-form" name="credentials[songLink]" value="' + data.drawings[i].songLink + '">' + '<br>' +
+              'Link to Song <br>' + '<input type="text" class="update-form" name="credentials[songLink]" value="' + data.drawings[i].songLink + '">' + '<br>' +
               '<input id="' + data.drawings[i]._id + '"class="btn btn-success" type="submit" name="submit" value="Update Drawing">' +
             '</fieldset>' +
-          // Delete Drawing Form
           '</form>' +
           '<form id="delete-drawing">' +
-            '<fieldset>' +
+            '<fieldset class="update-fields">' +
               '<input class="hidden" type="text" name="credentials[_id]" value="' + data.drawings[i]._id + '">' +
               '<input id="' + data.drawings[i]._id + '"class="btn btn-danger delete-button" type="submit" name="submit" value="Delete Drawing">' +
             '</fieldset>' +
           '</form>' +
-        '</div>' +
-      '</div>'
+        '</div>'
     )
   }
 }
