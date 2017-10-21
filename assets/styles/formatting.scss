@@ -98,6 +98,31 @@ nav {
   margin: 0 auto;
 }
 
+.intro {
+  background-color: $white;
+  border: 5px solid $blue;
+  width: 90%;
+  margin: 10px auto 0;
+  text-align: center;
+
+  > p {
+    padding: 0 10%;
+  }
+}
+
+.newest {
+  background-color: $white;
+  border: 5px solid $blue;
+  width: 45%;
+  margin: 10px auto 0;
+
+  > h3 {
+    font-family: $nav-font;
+    text-align: center;
+    margin: auto;
+    padding: 5px;
+  }
+}
 
 
 

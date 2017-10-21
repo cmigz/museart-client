@@ -18,6 +18,7 @@ $(() => {
     $('#home-feed').show()
     $('#home-feed').children().remove()
     drawingEvents.onGetDrawings()
+    $('#intro-container').show()
   })
 
   // Nav-My-Drawings Handler
@@ -25,6 +26,7 @@ $(() => {
     drawingEvents.onGetUserDrawings()
     $('#user-drawings').show()
     $('#create-drawing').show()
+    $('#intro-container').hide()
   })
 
   // Create-Drawing Handler
