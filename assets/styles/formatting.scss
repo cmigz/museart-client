@@ -127,6 +127,15 @@ nav {
   font-weight: bold;
 }
 
+.sign-out-input {
+  background-color: $white;
+  border: none;
+
+  :hover {
+    border: 3px solid $blue;
+  }
+}
+
 
 
 // Drawing Container ======================
