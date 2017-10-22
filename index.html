@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MuseArt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Do not add `link` tags-->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Do not add `script` tags-->
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+  </head>
+  <body >
+    <nav>
+      <ul>
+        <li id="nav-home">Home</li>
+        <!-- <li>About</li>
+        <li>Contact</li> -->
+        <li id="nav-my-drawings" class="hidden">My Drawings</li>
+        <!-- Sign Up Dropdown/Form -->
+        <li id="nav-sign-up" class="drowdown auth">
+          <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Sign Up
+          </button>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <form id="sign-up">
+              <fieldset>
+                <input type="text" name="credentials[email]" value="" placeholder="Email">
+                <input type="password" name="credentials[password]" value="" placeholder="Password">
+                <input type="password" name="credentials[password_confirmation]" value="" placeholder="Confirm Password">
+                <input class="btn btn-success" type="submit" name="submit" value="Sign up!!">
+              </fieldset>
+            </form>
+          </div>
+        </li>
+        <!-- Sign In Dropdown/Form -->
+        <li id="nav-sign-in" class="dropdown auth">
+          <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Sign In
+          </button>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <form id="sign-in">
+              <fieldset>
+                <input type="text" name="credentials[email]" value="" placeholder="Email">
+                <input type="password" name="credentials[password]" value="" placeholder="Password">
+                <input class="btn btn-success" type="submit" name="submit" value="Sign In!!">
+              </fieldset>
+            </form>
+          </div>
+        </li>
+        <li id="nav-sign-out" class="dropdown auth hidden">
+          <form id="sign-out" class="">
+            <fieldset>
+              <input class="sign-out-input" type="submit" name="submit" value="Sign out!">
+            </fieldset>
+          </form>
+        </li>
+        <li id="nav-change-password" class="nav-item dropdown auth hidden">
+          <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Change Password
+          </button>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <form id="change-password">
+              <fieldset>
+                <input type="password" name="passwords[old]" value="" placeholder="Original Password">
+                <input type="password" name="passwords[new]" value="" placeholder="New Password">
+                <input class="btn btn-success" type="submit" name="submit" value="Change Password">
+              </fieldset>
+            </form>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <header>
+      <div class="header-container container">
+        <img id="logo" alt="Logo" src="https://i.imgur.com/515HBgb.png">
+      </div>
+    </header>
+    <main>
+      <div id="intro-container">
+        <div class="intro">
+          <h2 class="drawing-header">Welcome!</h2>
+          <p>MuseArt is a site for lovers of music and art.  What do you see when you hear music?<br>Sketch it out and share it with the world!</p>
+        </div>
+        <div class="newest">
+          <h1 class="new-feed">Newest MuseArt</h1>
+        </div>
+      </div>
+
+      <div id="home-feed"></div>
+      <div class="create-container">
+        <form id="create-drawing" class="hidden">
+          <fieldset>
+            <input id="image-link" type="text" name="credentials[imageLink]" value="" placeholder="Link to Image">
+            <input type="text" name="credentials[songTitle]" value="" placeholder="Song Title">
+            <input type="text" name="credentials[songArtist]" value="" placeholder="Song Artist">
+            <input id="song-link" type="text" name="credentials[songLink]" value="" placeholder="Song Link">
+            <input type="text" name="credentials[lyrics]" value="" placeholder="Lyrics">
+            <input class="btn btn-success" type="submit" name="submit" value="Add Drawing">
+          </fieldset>
+        </form>
+      </div>
+
+      <div id="user-drawings"></div>
+    </main>
+  </body>
+</html>
