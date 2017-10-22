@@ -116,12 +116,15 @@ nav {
   width: 45%;
   margin: 10px auto 0;
 
-  > h3 {
-    font-family: $nav-font;
-    text-align: center;
-    margin: auto;
-    padding: 5px;
-  }
+
+}
+
+.new-feed {
+  font-family: $nav-font;
+  text-align: center;
+  margin: auto;
+  padding: 5px;
+  font-weight: bold;
 }
 
 
